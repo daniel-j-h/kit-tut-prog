@@ -1,7 +1,8 @@
 {
   "tutorial-01" : {
     "date" : "Oct. 15 2012",
-    "description" : "Searching, Sorting"
+    "description" : "Searching, Sorting",
+    "version" : "1"
   },
   "tutorial-02" : {
     "date" : "Oct. 29 2012",

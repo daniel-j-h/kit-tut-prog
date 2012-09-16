@@ -22,7 +22,7 @@
       <ul>
         {%- for fd in entries|sort %}
         <li class="to-cap space-tb">
-          <a href="build/{{ fd }}.html">{{ fd }}</a>
+          <a href="build/{{ fd }}.html{% if meta.get(fd) and meta.get(fd).get('version') %}?{{ meta.get(fd).get('version') }}{% endif %}">{{ fd }}</a>
           {% if meta.get(fd) %}<small>{{ meta.get(fd).get('date') }}</small><p>{{ meta.get(fd).get('description') }}</p>{% endif %}
         </li>
         {%- endfor %}
