@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Introduction To Programming</title>
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="reveal.js/css/main.css">
+    <link rel="stylesheet" href="reveal.js/css/theme/simple.css" id="theme">
+    <link rel="stylesheet" href="css/github.css">
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="state-background"></div>
+      <div class="slides">
+
+
+        <section>
+        <h1>Introduction To Programming</h1>
+        <h3>2012/2013</h3>
+        </section>
+
+        <section>
+        <h2>First Example</h2>
+        <pre><code contenteditable style="font-size: 18px;">
+public class Greeter {
+    public static void main(String[] args) {
+        System.out.println("Hello");
+    }
+}
+        </code></pre>
+        </section>
+
+
+      </div>
+
+      <!-- don't touch this -->
+      <aside class="controls">
+      <a class="left" href="#">&#x25C4;</a>
+      <a class="right" href="#">&#x25BA;</a>
+      <a class="up" href="#">&#x25B2;</a>
+      <a class="down" href="#">&#x25BC;</a>
+      </aside>
+
+      <div class="progress"><span></span></div>
+    </div>
+
+    <script src="reveal.js/lib/js/head.min.js"></script>
+    <script src="reveal.js/js/reveal.min.js"></script>
+
+    <script>
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        rollingLinks: false,
+
+        theme: Reveal.getQueryHash().theme || 'simple',
+        transition: Reveal.getQueryHash().transition || 'linear',
+
+        dependencies: [
+        { src: 'reveal.js/lib/js/highlight.js', async: true, callback: function() { window.hljs.initHighlightingOnLoad(); } },
+        { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+        { src: 'reveal.js/lib/js/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        { src: 'reveal.js/lib/js/data-markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        ]
+      });
+    </script>
+  </body>
+</html>
