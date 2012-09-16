@@ -24,6 +24,9 @@ footer {
 .to-upper {
   text-transform: uppercase;
 }
+.to-cap {
+  text-transform: capitalize;
+}
 .space-tb {
   padding: 1% 0% 1% 0%;
 }

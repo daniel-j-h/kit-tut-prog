@@ -12,7 +12,7 @@
       <h1 class="to-upper">Introduction To Programming</h1>
     </header>
     <article>
-      <p>
+      <p class="to-upper">
         <small>
           <a class="space-lr" href="https://github.com/daniel-j-h/kit-tut-prog/commits/gh-pages.atom">RSS Feed</a>
           <a class="space-lr" href="https://github.com/daniel-j-h/kit-tut-prog/tree/gh-pages">Repository</a>
@@ -21,12 +21,16 @@
       </p>
       <ul>
         {% for fd in entries|sort %}
-        <li class="to-upper space-tb"><a href="build/{{ fd }}.html">{{ fd }}</a></li>
+        {% set desc = meta.get(fd) %}
+        <li class="to-cap space-tb">
+          <a href="build/{{ fd }}.html">{{ fd }}</a>
+          {% if desc %}<small>{{ desc.get('date') }}</small><p>{{ desc.get('description') }}</p>{% endif %}
+        </li>
         {% endfor %}
       </ul>
     </article>
     <footer>
-      <small>index built {{ modified }}</small>
+      <small>Index built {{ modified }}</small>
     </footer>
   </body>
 </html>

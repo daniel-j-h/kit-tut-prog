@@ -3,6 +3,7 @@
 
 import sys
 import os
+import json
 import datetime
 from jinja2 import FileSystemLoader, Environment
 
@@ -11,6 +12,7 @@ if __name__ == '__main__':
 
     if len(sys.argv) == 2:
         template = env.get_template('index.tmpl')
+        meta = json.load(open('metadata.json'))
 
         for (paths, dirs, files) in os.walk(sys.argv[1]):
-            print(template.render(entries=[fd[:-5] for fd in files], modified=datetime.datetime.today().isoformat(' ')))
+            print(template.render(entries=[fd[:-5] for fd in files], meta=meta, modified=datetime.datetime.today().isoformat(' ')[:19]))
