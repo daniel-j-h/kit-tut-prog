@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>First Tutorial</title>
+    <title>{{ title|default('Introduction To Programming') }}</title>
     <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="reveal.js/css/main.css">
@@ -14,25 +14,7 @@
       <div class="state-background"></div>
       <div class="slides">
 
-
-
-<section>
-<h1>Introduction To Programming</h1>
-<h3>WS 2012</h3>
-</section>
-
-<section>
-<h2>First Example</h2>
-<pre><code contenteditable style="font-size: 18px;">
-public class Greeter {
-    public static void main(String[] args) {
-        System.out.println("Hello");
-    }
-}
-</code></pre>
-</section>
-
-
+{% block slides%}{% endblock %}
 
       </div>
 
