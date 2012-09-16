@@ -1,0 +1,18 @@
+@import url(https://fonts.googleapis.com/css?family=Oswald);
+
+body {
+  height: 100%;
+  font-family: 'Oswald', arial, serif;
+  font-size: 16px;
+  padding: 1% 20% 10% 10%;
+}
+h1 {
+  color: #ff8000;
+  text-transform: uppercase;
+}
+a {
+  text-decoration: none;
+}
+ul {
+  list-style-type: none;
+}
