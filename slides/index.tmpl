@@ -9,15 +9,24 @@
   </head>
   <body>
     <header>
-    <h1>Introduction To Programming</h1>
+      <h1 class="to-upper">Introduction To Programming</h1>
     </header>
     <article>
-    <p><a href="https://github.com/daniel-j-h/kit-tut-prog/commits/gh-pages.atom">RSS Feed</a></p>
-    <ul>
-      {% for file in entries %}
-      <li><a href="build/{{ file }}">Tutorial #{{ loop.index }}</a></li>
-      {% endfor %}
-    </ul>
+      <p>
+        <small>
+          <a class="space-lr" href="https://github.com/daniel-j-h/kit-tut-prog/commits/gh-pages.atom">RSS Feed</a>
+          <a class="space-lr" href="https://github.com/daniel-j-h/kit-tut-prog/tree/gh-pages">Repository</a>
+          <a class="space-lr" href="mailto:daniel&part;trvx&sdot;org">Contact</a>
+        </small>
+      </p>
+      <ul>
+        {% for fd in entries|sort %}
+        <li class="to-upper space-tb"><a href="build/{{ fd }}.html">{{ fd }}</a></li>
+        {% endfor %}
+      </ul>
     </article>
+    <footer>
+      <small>index built {{ modified }}</small>
+    </footer>
   </body>
 </html>

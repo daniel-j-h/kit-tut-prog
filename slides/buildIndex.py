@@ -3,6 +3,7 @@
 
 import sys
 import os
+import datetime
 from jinja2 import FileSystemLoader, Environment
 
 if __name__ == '__main__':
@@ -12,4 +13,4 @@ if __name__ == '__main__':
         template = env.get_template('index.tmpl')
 
         for (paths, dirs, files) in os.walk(sys.argv[1]):
-            print(template.render(entries=files))
+            print(template.render(entries=[fd[:-5] for fd in files], modified=datetime.datetime.today().isoformat(' ')))
