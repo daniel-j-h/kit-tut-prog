@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>{{ title|default('Introduction To Programming') }}</title>
+    <title>{% if meta.get(fd) and meta.get(fd).get('description') %}{{ meta.get(fd).get('description') }}{% else %}Introduction To Programming{% endif %}</title>
     <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="../reveal.js/css/main.css">
     <link rel="stylesheet" href="../reveal.js/css/theme/simple.css" id="theme">
@@ -12,6 +12,10 @@
     <div class="reveal">
       <div class="state-background"></div>
       <div class="slides">
+<section>
+<h1>{% if meta.get(fd) and meta.get(fd).get('description') %}{{ meta.get(fd).get('description') }}{% else %}Introduction To Programming{% endif %}</h1>
+{% if meta.get(fd) and meta.get(fd).get('date') %}<h3>{{ meta.get(fd).get('date') }}</h3>{% endif %}
+</section>
 {% block slides%}{% endblock %}
       </div>
 
