@@ -1,6 +1,6 @@
 PYTHON ?= python2.6
 BUILDDIR ?= ../build
-BUILDSLIDES ?= buildSlides.py
+BUILDSLIDE ?= buildSlide.py
 BUILDINDEX ?= buildIndex.py
 
 all: slides index
@@ -8,7 +8,7 @@ all: slides index
 slides: $(patsubst %.html, $(BUILDDIR)/%.html, $(wildcard *.html))
 
 $(BUILDDIR)/%.html: %.html Makefile
-	$(PYTHON) $(BUILDSLIDES) $< > $@
+	$(PYTHON) $(BUILDSLIDE) $< > $@
 
 index: Makefile
 	$(PYTHON) $(BUILDINDEX) $(BUILDDIR) > ../index.html

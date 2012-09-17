@@ -15,7 +15,7 @@ Jinja2 is used to simplify the build process.
 
 Or build them yourself
 
-* ./buildSlides.py tutorial-01.html > ../build/tutorial-01.html
+* ./buildSlide.py tutorial-01.html > ../build/tutorial-01.html
 * ./buildIndex.py ../build/ > ../index.html
 
 
