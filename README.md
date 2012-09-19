@@ -4,19 +4,20 @@ Introduction To Programming tutorial
 Building the slides
 -------------------
 
-Note: The build directory already contains the latest slides.
+Note: The build directory already contains the latest slides.  
 You only have to re-build a slide if you modified a corresponding file in the slide directory, or added a new one.
 
-Jinja2 is used to simplify the build process.
+Jinja2 is used to simplify the build process.  
+Reveal.js is included as a git submodule, so you have to clone the repository recursively.
 
-* git clone --recursive --branch gh-pages git://github.com/daniel-j-h/kit-tut-prog.git
-* cd kit-tut-prog/slides/
-* make --jobs 2 --keep-going
+    git clone --recursive --branch gh-pages git://github.com/daniel-j-h/kit-tut-prog.git
+    cd kit-tut-prog/slides/
+    make --jobs 2 --keep-going
 
 Or build them yourself
 
-* ./buildSlide.py tutorial-01.html > ../build/tutorial-01.html
-* ./buildIndex.py ../build/ > ../index.html
+    ./buildSlide.py tutorial-01.html > ../build/tutorial-01.html
+    ./buildIndex.py ../build/ > ../index.html
 
 
 Adding new slides
