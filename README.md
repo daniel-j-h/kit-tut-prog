@@ -23,7 +23,33 @@ Or build them yourself
 Adding new slides
 -----------------
 
-All slides should extend from slide.tmpl and override the slides block.
+All slides should extend from slide.tmpl and override the slides block.  
 Add your new .html file to the slides directory, metadata to the .json file, and re-run the commands above.
 
-See the .html and .json files in the slides directory for further information.
+
+Example slide syntax
+--------------------
+
+Your presentation file (my-presentation.html) should probably look like this.
+
+    {% extends 'slide.tmpl' %}
+    {% block slides %}
+    <section data-markdown>
+      ## First Slide
+
+      Using markdown.
+    </section>
+    <section>
+      <h2>Second Slide</h2>
+      <p>Using html.</p>
+    </section>
+    {% endblock %}
+
+You want to add some metadata, too.
+
+    "my-presentation" : {
+      "date" : "Oct. 29 2012",
+      "description" : "Basic examples"
+    }
+
+The description and date, if provided, is used for the index and for the cover slide.
