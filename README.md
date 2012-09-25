@@ -1,11 +1,11 @@
 Introduction To Programming tutorial
 ====================================
 
-Get The Slides
+Get the slides
 --------------
 
  * Online: [http://kit.trvx.org](http://kit.trvx.org)
- * Local copy: Open index.html in your browser.
+ * Local: Open index.html in your browser
 
 
 Building the slides

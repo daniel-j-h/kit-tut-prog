@@ -1,6 +1,16 @@
 Handouts
 ========
 
+Get the handouts
+----------------
+
+ * [Feeback form](https://github.com/downloads/daniel-j-h/kit-tut-prog/FeedbackForm.pdf)
+ * [Lesson plan](https://github.com/downloads/daniel-j-h/kit-tut-prog/LessonPlan.pdf)
+
+
+Description
+-----------
+
 * FeedbackForm: Short feedback from students for each tutorial
 * LessonPlan: Lesson preparation
 
