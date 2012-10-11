@@ -5,6 +5,7 @@ body {
   font-family: 'Oswald', arial, serif;
   font-size: 16px;
   padding: 0% 20% 0% 10%;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAIAAABv85FHAAAAAXNSR0IArs4c6QAAAB5JREFUCNdj/P//PwMOwMSAG1BFrqKiApnLSGe3AADunAdz8LN03AAAAABJRU5ErkJggg==);
 }
 h1 {
   color: #ff8000;
