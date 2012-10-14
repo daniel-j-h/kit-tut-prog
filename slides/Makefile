@@ -8,10 +8,10 @@ all: slides index
 
 slides: $(patsubst %.html, $(BUILDDIR)/%.html, $(wildcard *.html))
 
-$(BUILDDIR)/%.html: %.html Makefile
+$(BUILDDIR)/%.html: %.html Makefile slide.tmpl
 	$(PYTHON) $(BUILDSLIDE) $< > $@
 
-index: Makefile
+index: Makefile index.tmpl
 	$(PYTHON) $(BUILDINDEX) $(BUILDDIR) > $(INDEXFILE)
 
 clean:

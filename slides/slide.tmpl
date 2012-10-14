@@ -7,10 +7,12 @@
     <link rel="stylesheet" href="../reveal.js/css/reveal.css">
     <link rel="stylesheet" href="../reveal.js/css/theme/simple.css" id="theme">
     <link rel="stylesheet" href="../css/github.css">
+    <!--[if lt IE 9]>
+    <script src="../reveal.js/lib/js/html5shiv.js"></script>
+    <![endif]-->
   </head>
   <body>
     <div class="reveal">
-      <div class="state-background"></div>
       <div class="slides">
 <section>
 <h1>{% if meta.get(fd) and meta.get(fd).get('description') %}{{ meta.get(fd).get('description') }}{% else %}Introduction To Programming{% endif %}</h1>
@@ -18,16 +20,6 @@
 </section>
 {% block slides%}{% endblock %}
       </div>
-
-      <!-- don't touch this -->
-      <aside class="controls">
-      <a class="left" href="#">&#x25C4;</a>
-      <a class="right" href="#">&#x25BA;</a>
-      <a class="up" href="#">&#x25B2;</a>
-      <a class="down" href="#">&#x25BC;</a>
-      </aside>
-
-      <div class="progress"><span></span></div>
     </div>
 
     <script src="../reveal.js/lib/js/head.min.js"></script>
