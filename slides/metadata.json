@@ -1,10 +1,10 @@
 {
   "tutorial-01" : {
-    "date" : "Oct. 15 2012",
-    "description" : "Searching, Sorting"
+    "date" : "Oct. 24 2012",
+    "description" : "Objekte, Klassen, Datentypen"
   },
   "tutorial-02" : {
-    "date" : "Oct. 29 2012",
-    "description" : "Generics"
+    "date" : "Oct. 31 2012",
+    "description" : "Konstrukturen, Methoden"
   }
 }
