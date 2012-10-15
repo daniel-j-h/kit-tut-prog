@@ -17,4 +17,4 @@ if __name__ == '__main__':
 
         for (paths, dirs, files) in os.walk(sys.argv[1]):
             entries = [fd[:-5] for fd in files]
-            print(template.render(entries=entries, meta=meta, modified=modified))
+            print(template.render(entries=entries, meta=meta, modified=modified).encode('utf-8'))

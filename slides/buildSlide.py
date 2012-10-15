@@ -12,4 +12,4 @@ if __name__ == '__main__':
         template = env.get_template(sys.argv[1])
         meta = json.load(open('metadata.json'))
 
-        print(template.render(fd=sys.argv[1][:-5], meta=meta))
+        print(template.render(fd=sys.argv[1][:-5], meta=meta).encode('utf-8'))
