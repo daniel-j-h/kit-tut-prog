@@ -3,68 +3,161 @@
 
 <!-- 1 --!>
 <section data-markdown>
-## Hallo!
+### Hallo!
 
-* Daniel Hofmann <daniel@trvx.org>
+* __Daniel__ Hofmann
+* Bachelor 5. Semester
+* Major Info, Minor BWL/Marketing
+
+
+* <daniel@trvx.org>
 * Folien [kit.trvx.org](http://kit.trvx.org)
 </section>
 
 
 <section data-markdown>
-## Organisatorisches
+### Organisatorisches
 
 * [Übungsschein anmelden](https://studium.kit.edu)
 * [Praktomat anmelden](https://praktomat.info.uni-karlsruhe.de)
 * [Disclaimer abgeben](https://verialg.iti.kit.edu/prog_ws12.php)
 * [VPN einrichten](https://vpn.kit.edu)
 * Orientierungsprüfung
+* ATIS Poolraumbetreuung DI/MI, 15.45-17.15
 </section>
 
 
 <section data-markdown>
-## Agenda
+### Agenda
 
 * System einrichten
 * Wiederholung Vorlesung
 * Übungsblatt Teilaufgabe A
 </section>
 
+
 <section data-markdown>
-## System einrichten
+### System einrichten
 
-* [Eclipse IDE](http://www.eclipse.org/downloads/)
 * [JDK 7](http://jdk7.java.net/download.html)
-
+* [Windows: PATH setzen](http://java.com/en/download/help/path.xml)
+* [Eclipse IDE](http://www.eclipse.org/downloads/)
 * Zeilenbreite 120
-
-* Kompilieren java/javac
+* Kompilieren javac/java
 </section>
+
 
 <!-- 2 --!>
 <section data-markdown>
-## Wiederholung
+### Wiederholung
 
-* TODO
+* Objekte, Klassen
+* Typen, Variablen
+</section>
+
+
+<section data-markdown>
+### Objekte, Klassen
+
+* Klasse konzeptioneller "Bauplan"
+* Abstraktion realer Gegenstände/Konstrukte
+* Objekte werden nach Klassenvorlage erzeugt
+</section>
+
+
+<section data-markdown>
+### Objekte, Klassen
+
+    // "Bauplan", MyClass.java
+    class MyClass {
+        // Attribute
+        int attr;
+
+        // Methoden
+        int getAttr() { ... }
+    }
+
+
+    // Objekt der "Art" MyClass erzeugen
+    MyClass c = new MyClass();
+
+    // Methoden aufrufen
+    c.getAttr();
+
+* Eine Klasse pro Datei
+* Klassenname beginnt mit Großbuchstabe
+</section>
+
+
+<section data-markdown>
+### Typen, Variablen
+
+* Elementare Datentypen
+* Klassen sind Typen
+
+</section>
+
+
+<section data-markdown>
+### Typen, Variablen
+
+    byte myByte = 0;
+    short myShort = 30;
+    int myInt = 24; // "standard" Ganzzahltyp
+    long myLong = 24L;
+    float myFloat = 12.3F;
+    double myDouble = 3.141592; // "standard" Fließkommatyp
+    char myChar = 'A';
+    boolean myBoolean = true;
+    enum myEnum = { FIRST, SECOND }
+    String myString = "wooosh";
+
+* Wertebereich beachten
+
+* Was fällt beim Typ long und float auf?
+* Was beim Typ String?
+</section>
+
+
+<section data-markdown>
+### Jetzt seid ihr gefragt
+
+* __Date__
+
+  Tag, Monat, Jahr
+
+* __Author__
+
+  Vor-/Nachname, Geburtsdatum
+
+* __Document__
+
+  Titel, Sprache, Beschreibung, Veröffentlichungsdatum
+
 </section>
 
 
 <!-- 3 --!>
 <section data-markdown>
-## Übungsblatt A
+### Übungsblatt A
 
 * Hinweise beachten
 * Klassenentwurf
 * Passende Datentypen
+* Hint [1](http://docs.oracle.com/javase/tutorial/java/nutsandbolts/index.html)
+  [2](http://docs.oracle.com/javase/tutorial/java/concepts/index.html)
+  [3](http://docs.oracle.com/javase/tutorial/java/javaOO/index.html)
 
 </section>
 
 
 <section data-markdown>
-## Erinnerung
+### Erinnerung
 
 * Folien [kit.trvx.org](http://kit.trvx.org)
 * Organisatorisches erledigen
 * Frühzeitig Lösungen einreichen
+* ATIS Poolraumbetreuung DI/MI, 15.45-17.15
 </section>
 
 {% endblock %}

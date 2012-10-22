@@ -1,10 +1,18 @@
 {
   "tutorial-01" : {
     "date" : "Oct. 24 2012",
-    "description" : "Objekte, Klassen, Datentypen"
+    "description" : "Objekte, Klassen, Typen"
   },
   "tutorial-02" : {
     "date" : "Oct. 31 2012",
-    "description" : "Konstrukturen, Methoden"
+    "description" : "Konstruktoren, Methoden"
+  },
+  "tutorial-03" : {
+    "date" : "Nov. 7 2012",
+    "description" : "Kontrollstrukturen"
+  },
+  "tutorial-04" : {
+    "date" : "Nov. 14 2012",
+    "description" : "Rekursion"
   }
 }
