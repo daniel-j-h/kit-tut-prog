@@ -34,12 +34,43 @@
 <section data-markdown>
 ### Agenda
 
+* Styles and Standards
 * Wiederholung Vorlesung
+* Android Beispiel
 * Übungsblatt Teilaufgabe B
 </section>
 
 
 <!-- 2 --!>
+<section data-markdown>
+###  Styles and Standards
+* [Sun/Oracle Code Conventions](http://www.oracle.com/technetwork/java/codeconv-138413.html)
+* Checkstyle (später)
+
+
+</section>
+
+
+<section data-markdown>
+###  Styles and Standards
+
+[JPL Institutional Coding Standard](http://lars-lab.jpl.nasa.gov/JPL_Coding_Standard_C.pdf) (e.g. [Curiosity](https://en.wikipedia.org/wiki/Mars_Curiosity))
+
+<blockquote>Place no more than one statement or declaration per line of text.</blockquote>
+<blockquote>Use short functions with a limited number of parameters.</blockquote>
+</section>
+
+
+<section data-markdown>
+###  Styles and Standards
+
+[JSF Air Vehicle](https://en.wikipedia.org/wiki/F-35_Lightning_II) [C++ Coding Standards](http://www.jsf.mil/downloads/documents/JSF_AV_C++_Coding_Standards_Rev_C.doc)
+
+<blockquote>Maintainability: Source code should be written in a manner that is consistent, readable, simple in design, and easy to debug.</blockquote>
+<blockquote>Readability: Source code should be written in a manner that is easy to read, understand and comprehend.</blockquote>
+</section>
+
+
 <section data-markdown>
 ### Wiederholung
 
@@ -66,6 +97,65 @@
 </section>
 
 
+<section data-markdown>
+### Jetzt seid ihr gefragt
+
+Eure Modellierung der letzten Woche
+
+    class Date {
+      byte day;
+      byte month;
+      int year;
+    }
+    class Author {
+      String firstName;
+      String lastName;
+      Date dateOfBirth;
+    }
+    class Document {
+      String title;
+      Date releaseDate;
+      String language;
+      Author author;
+    }
+</section>
+
+
+<section data-markdown>
+### Jetzt seid ihr gefragt
+
+[Subtile Fehlerquelle](https://en.wikipedia.org/wiki/Date_format_by_country)
+
+    // day-month-year - approx. population in million: 3200
+    // month-day-year - approx. population in million: 310
+    Date d = new Date(28, 4, 1985);
+    Date d = new Date(4, 28, 1985);
+
+<blockquote>Make interfaces easy to use correctly and hard to use incorrectly</blockquote>
+
+    Date d = new Date(new Day(28), new Month(4), new Year(1985))
+</section>
+
+
+<section data-markdown>
+### Android Beispiel
+
+    public class DisplayMessageActivity extends Activity {
+        @Override
+        public void onCreate(Bundle savedInstanceState) {
+
+          // omitted for clarity: initialization, get message, ...
+
+          TextView textView = new TextView(this);
+          textView.setTextSize(40);
+          textView.setText(message);
+
+          setContentView(textView);
+        }
+    }
+</section>
+
+
 <!-- 3 --!>
 <section data-markdown>
 ### Übungsblatt B
@@ -74,6 +164,10 @@
 * Methoden der Klassen
 * Konstruktoren, Attributzuweisung
 * Factory Methode, Entkopplung
+* Hint [1](http://docs.oracle.com/javase/tutorial/java/nutsandbolts/index.html)
+  [2](http://docs.oracle.com/javase/tutorial/java/concepts/index.html)
+  [3](http://docs.oracle.com/javase/tutorial/java/javaOO/index.html)
+
 </section>
 
 
