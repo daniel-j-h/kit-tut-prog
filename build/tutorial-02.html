@@ -36,7 +36,7 @@
 
 * Styles and Standards
 * Wiederholung Vorlesung
-* Android Beispiel
+* Bunte Beispiele
 * Übungsblatt Teilaufgabe B
 </section>
 
@@ -74,14 +74,53 @@
 <section data-markdown>
 ### Wiederholung
 
-* Methoden, Konstruktoren
+* Methoden
+* Konstruktoren
 </section>
 
 
 <section data-markdown>
-### Methoden, Konstruktoren
+### Methoden
 
-* TODO
+    public class Shark {
+        // attributes
+        private Laser laserAttachedToHead;
+
+        // methods
+        public void attack(Enemy e) {
+            this.laserAttachedToHead.fire(e);
+        }
+
+        private void eat() {
+            // rawr!
+        }
+    }
+
+    // invoke method
+    Shark erik = new Shark();
+    erik.attack(somalianPirate);
+
+* Kann man Erik auffordern zu essen?
+</section>
+
+
+<section data-markdown>
+### Konstruktoren
+
+    public class Shark {
+        private int size;
+
+        // constructor
+        public Shark(int size) {
+            this.size = size;
+        }
+    }
+
+    // initializes object
+    Shark erik = new Shark(25);
+
+* Konstruktorensignatur
+* Shadowing und 'this'
 </section>
 
 
@@ -133,12 +172,53 @@ Eure Modellierung der letzten Woche
 
 <blockquote>Make interfaces easy to use correctly and hard to use incorrectly</blockquote>
 
-    Date d = new Date(new Day(28), new Month(4), new Year(1985))
+    Date d = new Date(new Day(28), new Month(4), new Year(1985));
 </section>
 
 
 <section data-markdown>
-### Android Beispiel
+### Factory Pattern
+
+    /* om nom nom */
+
+    Cake chocolateCake = new Cake(new Flour(250),
+                                  new Sugar(50),
+                                  new Eggs(4),
+                                  new Butter(100),
+                                  new Chocolate(250),
+                                  new Marzipan(50));
+
+
+    Cake marzipanCake = new Cake(new Flour(250),
+                                 new Sugar(25),
+                                 new Eggs(6),
+                                 new Butter(150),
+                                 new Chocolate(100),
+                                 new Marzipan(250));
+
+* Welche Fehlerquellen seht ihr?
+* Wie verbessern?
+</section>
+
+
+<section data-markdown>
+### Factory Pattern
+
+    /* om nom nom */
+
+    Cake chocolateCake = myCakeFactory.createChocolateCake();
+
+    Cake marzipanCake = myCakeFactory.createMarzipanCake();
+
+* Vor- / Nachteile?
+* Design Pattern (2. Semester: Softwaretechnik)
+</section>
+
+
+<section data-markdown>
+### Bunte Beispiele: Android
+
+Konstruktoren / Methoden
 
     public class DisplayMessageActivity extends Activity {
         @Override
@@ -153,6 +233,19 @@ Eure Modellierung der letzten Woche
           setContentView(textView);
         }
     }
+</section>
+
+
+<section data-markdown>
+### Bunte Beispiele: [Redis](http://redis.io/): [Jedis driver](https://github.com/xetorthio/jedis)
+
+Konstruktoren / Methoden
+
+    Jedis j = new Jedis(host, port);
+
+    j.set("key", "value");
+
+    String ret = j.get("key");
 </section>
 
 
