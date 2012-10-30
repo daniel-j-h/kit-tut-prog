@@ -74,44 +74,71 @@
 <section data-markdown>
 ### Wiederholung
 
+* Logik
+* Arithmetik
 * Methoden
 * Konstruktoren
 </section>
 
 
 <section data-markdown>
+### Logik
+
+    int a = 4 | 6;
+    int b = 4 & 7;
+
+    boolean c = true || false;
+    boolean d = false && true;
+
+* short-circuit
+* bitwise |,& vs. logical ||, &&
+</section>
+
+
+<section data-markdown>
+### Arithmetik
+
+    float a = 7 / 2;
+    int b = (int) (7.0 / 2.0);
+
+    int c = 1;
+    c += 1;
+
+* Literals
+* Casts
+</section>
+
+
+<section data-markdown>
 ### Methoden
 
-    public class Shark {
-        // attributes
-        private Laser laserAttachedToHead;
+    class Shark {
+        int size;
+        Laser laserAttachedToHead;
 
-        // methods
-        public void attack(Enemy e) {
-            this.laserAttachedToHead.fire(e);
+        void attack(Enemy e) {
+            laserAttachedToHead.fire(e);
         }
 
-        private void eat() {
-            // rawr!
+        int getSize() {
+            return size;
         }
     }
 
     // invoke method
     Shark erik = new Shark();
     erik.attack(somalianPirate);
-
-* Kann man Erik auffordern zu essen?
 </section>
 
 
 <section data-markdown>
 ### Konstruktoren
 
-    public class Shark {
-        private int size;
+    class Shark {
+        int size;
 
         // constructor
-        public Shark(int size) {
+        Shark(int size) {
             this.size = size;
         }
     }
@@ -127,12 +154,7 @@
 <section data-markdown>
 ### Jetzt seid ihr gefragt
 
-* Modifier
-* Konstruktoren
-* Getter, Setter
-* toString() Methode
-
-* für __Date__, __Author__, __Document__
+* Konstruktor für __Date__, __Author__, __Document__
 </section>
 
 
