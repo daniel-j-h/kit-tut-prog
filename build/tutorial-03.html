@@ -32,7 +32,7 @@
 <section data-markdown>
 ### Agenda
 
-* TODO
+* Nachbesprechung Übungsblatt
 * Wiederholung Vorlesung
 * Übungsblatt Teilaufgabe A
 </section>
@@ -40,9 +40,166 @@
 
 <!-- 2 --!>
 <section data-markdown>
-### Wiederholung
+### Nachbesprechung Übungsblatt
 
 * TODO
+</section>
+
+
+<section data-markdown>
+### Wiederholung
+
+* Kontrollfluss
+* Schleifen
+</section>
+
+
+<section data-markdown>
+### [Kontrollfluss](http://docs.oracle.com/javase/tutorial/java/nutsandbolts/flow.html)
+
+* if-then-else
+* switch
+</section>
+
+
+<section data-markdown>
+### if-then-else
+
+    if (condition) {
+        System.out.println("condition is true");
+    } else {
+        System.out.println("condition is false");
+    }
+
+    if (amount > 5) {
+      System.out.println("amount > 5");
+    } else if (amount > 4) {
+      System.out.println("amount > 4");
+    } else {
+      System.out.println("amount not > 5 and not > 4");
+    }
+
+* chaining
+</section>
+
+
+<section data-markdown>
+### if-then-else
+
+    if (erik.laserHasEnergy() && erik.isAngry()) {
+        erik.attack(somalianPirate);
+    }
+
+* boolean logic
+* short-circuit
+</section>
+
+
+<section data-markdown>
+### switch
+
+    switch (amount) {
+        case 5:
+          System.out.println("amount is 5");
+          break;
+        case 4:
+          System.out.println("amount is 4");
+          break;
+        default:
+          System.out.println("amount is not 5 and not 4");
+          break;
+    }
+
+* primitive data types and wrappers
+* Strings with Java 7
+</section>
+
+
+<section data-markdown>
+### switch
+
+    // radio buttons: recent, popular, mixed
+
+    switch (filterMode) {
+        case "recent":
+        case "popular":
+        case "mixed":
+          apiQuery += filterMode;
+          break;
+        default:
+          apiQuery += "mixed";
+          break;
+    }
+
+    // "http://search.twitter.com/
+    //    search.json?q=" + keyword + "&result_type=" + filterMode;
+
+* fall-through
+</section>
+
+
+<section data-markdown>
+### [Schleifen](http://docs.oracle.com/javase/tutorial/java/nutsandbolts/flow.html)
+
+* while
+* for
+</section>
+
+
+<section data-markdown>
+### while
+
+    while (condition) {
+        //
+    }
+
+
+    do {
+        //
+    } while (condition);
+
+* do-while garantiert ersten Durchlauf
+</section>
+
+
+<section data-markdown>
+### for
+
+    for (init; condition; op) {
+        //
+    }
+
+
+    for (int i = 0; i < 10; i++) {
+        System.out.println("i is " + i);
+    }
+
+* pre/post increment/decrement
+</section>
+
+
+<section data-markdown>
+### Branching
+
+    for (;;) {
+        if (condition) {
+            break; // breaks out of the loop
+        } else {
+            //
+        }
+    }
+
+    while (true) {
+        if (condition) {
+            continue; // continues at the top of the loop
+        } else {
+            //
+        }
+    }
+
+* break
+* continue
+* return
 </section>
 
 
@@ -58,7 +215,6 @@
 <section data-markdown>
 ### Erinnerung
 
-* Organisatorisches erledigen
 * Frühzeitig Lösungen einreichen
 * ATIS Poolraumbetreuung DI/MI, 15.45-17.15
 </section>
