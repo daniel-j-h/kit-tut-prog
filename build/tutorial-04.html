@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Arrays</title>
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../reveal.js/css/reveal.css">
+    <link rel="stylesheet" href="../reveal.js/css/theme/simple.css" id="theme">
+    <link rel="stylesheet" href="../css/github.css">
+    <!--[if lt IE 9]>
+    <script src="../reveal.js/lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+<section>
+<h1>Arrays</h1>
+<h3>Nov. 14 2012</h3>
+</section>
+
+
+<!-- 1 --!>
+<section data-markdown>
+### Organisatorisches
+
+* Übungsblatt bis 19.11.
+* ATIS Poolraumbetreuung DI/MI, 15.45-17.15
+</section>
+
+
+<section data-markdown>
+### Agenda
+
+* Wiederholung Vorlesung
+* Übungsblatt Teilaufgabe B
+</section>
+
+
+<!-- 2 --!>
+<section data-markdown>
+### Wiederholung
+
+* Arrays
+* Range-based loop
+</section>
+
+
+<section data-markdown>
+### [Arrays](http://docs.oracle.com/javase/tutorial/java/nutsandbolts/arrays.html)
+
+<blockquote>Each class variable, instance variable, or array component is initialized with a default value when it is created (§15.9, §15.10)</blockquote>
+[Java 7 Language Specification](http://docs.oracle.com/javase/specs/jls/se7/html/jls-4.html#jls-4.12.5)
+</section>
+
+
+<section data-markdown>
+### [Range-based loop](http://docs.oracle.com/javase/specs/jls/se7/html/jls-14.html#jls-14.14.2)
+
+    int[] values = { 5, 2, 7, 8, 2, 5 };
+    int sum;
+
+    for (int v : values)
+        sum += v;
+</section>
+
+
+<!-- 3 --!>
+<section data-markdown>
+### Übungsblatt B
+
+* Hinweise beachten
+* Array Initialisierung
+</section>
+
+
+<section data-markdown>
+### Erinnerung
+
+* Frühzeitig Lösungen einreichen
+* ATIS Poolraumbetreuung DI/MI, 15.45-17.15
+</section>
+
+
+      </div>
+    </div>
+
+    <script src="../reveal.js/lib/js/head.min.js"></script>
+    <script src="../reveal.js/js/reveal.min.js"></script>
+
+    <script>
+      Reveal.initialize({
+        controls: false,
+        progress: true,
+        history: true,
+        rollingLinks: false,
+
+        theme: 'simple',
+        transition: 'linear',
+
+        dependencies: [
+        { src: '../reveal.js/lib/js/highlight.js', async: true, callback: function() { window.hljs.initHighlightingOnLoad(); } },
+        { src: '../reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+        { src: '../reveal.js/lib/js/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        { src: '../reveal.js/lib/js/data-markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } }
+        ]
+      });
+    </script>
+  </body>
+</html>
