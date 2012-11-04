@@ -16,6 +16,7 @@
 * Nachbesprechung Übungsblatt
 * Checkstyle
 * Wiederholung Vorlesung
+* Bunte Beispiele
 * Übungsblatt Teilaufgabe A
 </section>
 
@@ -39,8 +40,17 @@
 <section data-markdown>
 ### Wiederholung
 
+* Was bisher geschah
 * Kontrollfluss
 * Schleifen
+</section>
+
+
+<section data-markdown>
+### Was bisher geschah
+
+* Objekte, Klassen, Typen
+* Konstruktoren, Methoden
 </section>
 
 
@@ -190,6 +200,54 @@
 * break
 * continue
 * return
+</section>
+
+
+<section data-markdown>
+### Bunte Beispiele: Chromium
+
+[src/ui/base/event.cc:223](http://code.google.com/searchframe#OAMlx_jo-ck/src/ui/base/event.cc&exact_package=chromium&q=switch%20lang:%5Ec%2B%2B$%20case:yes&l=223)
+
+    switch (click_count) {
+      case 1:
+        f &= ~EF_IS_DOUBLE_CLICK;
+        f &= ~EF_IS_TRIPLE_CLICK;
+        break;
+      case 2:
+        f |= EF_IS_DOUBLE_CLICK;
+        f &= ~EF_IS_TRIPLE_CLICK;
+        break;
+      case 3:
+        f &= ~EF_IS_DOUBLE_CLICK;
+        f |= EF_IS_TRIPLE_CLICK;
+        break;
+    }
+    set_flags(f);
+
+<small>accessed Nov. 5, 2012</small>
+</section>
+
+
+<section data-markdown>
+### Bunte Beispiele: Chromium
+
+[src/base/location.cc:58](http://code.google.com/searchframe#OAMlx_jo-ck/src/base/location.cc&exact_package=chromium&q=switch%20lang:%5Ec%2B%2B$%20case:yes&l=58)
+
+    switch (*p) {
+      case '<':
+        output->append("&amp;lt;");
+        break;
+
+      case '>':
+        output->append("&amp;gt;");
+        break;
+
+      default:
+        output->push_back(*p);
+        break;
+    }
+
+<small>accessed Nov. 5, 2012</small>
 </section>
 
 
