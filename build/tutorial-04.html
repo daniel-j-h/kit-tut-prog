@@ -33,6 +33,7 @@
 ### Agenda
 
 * Wiederholung Vorlesung
+* Bunte Beispiele
 * Übungsblatt Teilaufgabe B
 </section>
 
@@ -62,6 +63,33 @@
 
     for (int v : values)
         sum += v;
+</section>
+
+
+<section data-markdown>
+### Bunte Beispiele: Android
+
+[src/com/android/contacts/dialpad/DialpadFragment.java:475](https://github.com/android/platform_packages_apps_contacts/blob/master/src/com/android/contacts/dialpad/DialpadFragment.java#L475)
+
+    private void setupKeypad(View fragmentView) { // shortened
+        int[] buttonIds = new int[] {
+            R.id.one, /* .. */, R.id.zero, R.id.star, R.id.pound };
+
+        for (int id : buttonIds) {
+            ((DialpadImageButton) fragmentView.findViewById(id)).
+                    setOnPressedListener(this);
+        }
+
+        // Long-pressing one button will initiate Voicemail.
+        fragmentView.findViewById(R.id.one).
+                setOnLongClickListener(this);
+
+        // Long-pressing zero button will enter '+' instead.
+        fragmentView.findViewById(R.id.zero).
+               setOnLongClickListener(this);
+    }
+
+<small>accessed Nov. 5, 2012</small>
 </section>
 
 

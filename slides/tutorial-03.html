@@ -207,6 +207,29 @@
 <section data-markdown>
 ### Bunte Beispiele: Chromium
 
+[src/base/location.cc:58](http://code.google.com/searchframe#OAMlx_jo-ck/src/base/location.cc&exact_package=chromium&q=switch%20lang:%5Ec%2B%2B$%20case:yes&l=58)
+
+    switch (*p) {
+      case '<':
+        output->append("&amp;lt;");
+        break;
+
+      case '>':
+        output->append("&amp;gt;");
+        break;
+
+      default:
+        output->push_back(*p);
+        break;
+    }
+
+<small>accessed Nov. 5, 2012</small>
+</section>
+
+
+<section data-markdown>
+### Bunte Beispiele: Chromium
+
 [src/ui/base/event.cc:223](http://code.google.com/searchframe#OAMlx_jo-ck/src/ui/base/event.cc&exact_package=chromium&q=switch%20lang:%5Ec%2B%2B$%20case:yes&l=223)
 
     switch (click_count) {
@@ -233,55 +256,6 @@ und
 [keyPressed()](https://github.com/android/platform_packages_apps_contacts/blob/master/src/com/android/contacts/dialpad/DialpadFragment.java#L718)
 </section>
 
-
-<section data-markdown>
-### Bunte Beispiele: Chromium
-
-[src/base/location.cc:58](http://code.google.com/searchframe#OAMlx_jo-ck/src/base/location.cc&exact_package=chromium&q=switch%20lang:%5Ec%2B%2B$%20case:yes&l=58)
-
-    switch (*p) {
-      case '<':
-        output->append("&amp;lt;");
-        break;
-
-      case '>':
-        output->append("&amp;gt;");
-        break;
-
-      default:
-        output->push_back(*p);
-        break;
-    }
-
-<small>accessed Nov. 5, 2012</small>
-</section>
-
-
-<section data-markdown>
-### Bunte Beispiele: Android
-
-[src/com/android/contacts/dialpad/DialpadFragment.java:475](https://github.com/android/platform_packages_apps_contacts/blob/master/src/com/android/contacts/dialpad/DialpadFragment.java#L475)
-
-    private void setupKeypad(View fragmentView) { // shortened
-        int[] buttonIds = new int[] {
-            R.id.one, /* .. */, R.id.zero, R.id.star, R.id.pound };
-
-        for (int id : buttonIds) {
-            ((DialpadImageButton) fragmentView.findViewById(id)).
-                    setOnPressedListener(this);
-        }
-
-        // Long-pressing one button will initiate Voicemail.
-        fragmentView.findViewById(R.id.one).
-                setOnLongClickListener(this);
-
-        // Long-pressing zero button will enter '+' instead.
-        fragmentView.findViewById(R.id.zero).
-               setOnLongClickListener(this);
-    }
-
-<small>accessed Nov. 5, 2012</small>
-</section>
 
 <!-- 3 --!>
 <section data-markdown>
