@@ -37,6 +37,7 @@
 * Wiederholung Vorlesung
 * Bunte Beispiele
 * Übungsblatt Teilaufgabe A
+* Feedback
 </section>
 
 
@@ -244,6 +245,11 @@
     set_flags(f);
 
 <small>accessed Nov. 5, 2012</small>
+
+Bzw. Android dialpad
+[onPressed()](https://github.com/android/platform_packages_apps_contacts/blob/master/src/com/android/contacts/dialpad/DialpadFragment.java#L791)
+und
+[keyPressed()](https://github.com/android/platform_packages_apps_contacts/blob/master/src/com/android/contacts/dialpad/DialpadFragment.java#L718)
 </section>
 
 
@@ -270,6 +276,32 @@
 </section>
 
 
+<section data-markdown>
+### Bunte Beispiele: Android
+
+[src/com/android/contacts/dialpad/DialpadFragment.java:475](https://github.com/android/platform_packages_apps_contacts/blob/master/src/com/android/contacts/dialpad/DialpadFragment.java#L475)
+
+    private void setupKeypad(View fragmentView) { // shortened
+        int[] buttonIds = new int[] {
+            R.id.one, /* .. */, R.id.zero, R.id.star, R.id.pound };
+
+        for (int id : buttonIds) {
+            ((DialpadImageButton) fragmentView.findViewById(id)).
+                    setOnPressedListener(this);
+        }
+
+        // Long-pressing one button will initiate Voicemail.
+        fragmentView.findViewById(R.id.one).
+                setOnLongClickListener(this);
+
+        // Long-pressing zero button will enter '+' instead.
+        fragmentView.findViewById(R.id.zero).
+               setOnLongClickListener(this);
+    }
+
+<small>accessed Nov. 5, 2012</small>
+</section>
+
 <!-- 3 --!>
 <section data-markdown>
 ### Übungsblatt A
@@ -293,6 +325,19 @@ Rekursive Definition
     -- [1,1,1,3,5,9,17,31,57,105,193,355,653,1201,2209,4063]
 
 Aufgabe jedoch: Iterativ!
+</section>
+
+
+<section data-markdown>
+### Feedback
+
+Letzte Woche vergessen, darum heute ausführlicher
+
+* Folien und Präsentation
+* Wiederholung Vorlesung
+* Beispiele
+* Übungsblatt Besprechung
+* Generelle Verbesserungsvorschläge
 </section>
 
 
