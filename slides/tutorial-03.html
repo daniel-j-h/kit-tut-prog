@@ -7,6 +7,8 @@
 
 * Übungsblatt bis 19.11.
 * ATIS Poolraumbetreuung DI/MI, 15.45-17.15
+
+heute: <strong>bunter</strong> und <strong>toller</strong> denn je!
 </section>
 
 
@@ -66,9 +68,9 @@ Was ihr besser machen könnt
 
 price-in-cent: int vs. float
 
-<blockquote>The int data type is a 32-bit signed two's complement integer.</blockquote>
+<blockquote>The int data type is a <strong>32-bit</strong> signed two's complement integer.</blockquote>
 
-<blockquote>The float data type is a single-precision 32-bit IEEE 754 floating point.</blockquote>
+<blockquote>The float data type is a single-precision <strong>32-bit</strong> IEEE 754 floating point.</blockquote>
 
 [Two's complement](https://en.wikipedia.org/wiki/Twos_complement)
 
@@ -95,6 +97,7 @@ and
 ### Wiederholung
 
 * Was bisher geschah
+* static, modifier, main
 * Kontrollfluss
 * Schleifen
 </section>
@@ -109,36 +112,63 @@ and
 
 
 <section data-markdown>
-### [Kontrollfluss](http://docs.oracle.com/javase/tutorial/java/nutsandbolts/flow.html)
+### static, modifier, main
 
-* if-then-else
-* switch
+[Sichtbarkeiten](http://docs.oracle.com/javase/tutorial/java/javaOO/accesscontrol.html)
+und
+[Static](http://docs.oracle.com/javase/tutorial/java/javaOO/classvars.html)
+
+    public static int timesTwo(int number) { // scope begin
+        int result = number * 2;
+
+        return result;
+    } // scope end
+
+    public static void main(String[] args) {
+        //
+    }
+
+* private: innerhalb Klasse aufrufbar
+* public: von überall aufrufbar
+
+* Was für Vorteile seht ihr?
+* Wie statische Methoden aufrufen?
 </section>
 
 
 <section data-markdown>
-### if-then-else
+### [Kontrollfluss](http://docs.oracle.com/javase/tutorial/java/nutsandbolts/flow.html)
+
+* [if-then-else](http://docs.oracle.com/javase/tutorial/java/nutsandbolts/if.html)
+* [switch](http://docs.oracle.com/javase/tutorial/java/nutsandbolts/switch.html)
+</section>
+
+
+<section data-markdown>
+### [if-then-else](http://docs.oracle.com/javase/tutorial/java/nutsandbolts/if.html)
 
     if (condition) {
-        System.out.println("condition is true");
+        // branch A
     } else {
-        System.out.println("condition is false");
+        // branch B
     }
 
     if (amount > 5) {
-      System.out.println("amount > 5");
+        // branch X
     } else if (amount > 4) {
-      System.out.println("amount > 4");
+        // branch Y
     } else {
-      System.out.println("amount not > 5 and not > 4");
+        // branch Z
     }
 
 * chaining
+
+* ternary operator: condition ? doA() : doB();
 </section>
 
 
 <section data-markdown>
-### if-then-else
+### [if-then-else](http://docs.oracle.com/javase/tutorial/java/nutsandbolts/if.html)
 
     if (erik.laserHasEnergy() && erik.isAngry()) {
         erik.attack(somalianPirate);
@@ -150,7 +180,7 @@ and
 
 
 <section data-markdown>
-### switch
+### [switch](http://docs.oracle.com/javase/tutorial/java/nutsandbolts/switch.html)
 
     switch (amount) {
         case 5:
@@ -164,13 +194,13 @@ and
           break;
     }
 
-* primitive data types and wrappers
+* works on primitive data types and wrappers
 * Strings with Java 7
 </section>
 
 
 <section data-markdown>
-### switch
+### [switch](http://docs.oracle.com/javase/tutorial/java/nutsandbolts/switch.html)
 
     // radio buttons: recent, popular, mixed
 
@@ -189,19 +219,21 @@ and
     //    search.json?q=" + keyword + "&result_type=" + filterMode;
 
 * fall-through
+
+* Jetzt seid ihr gefragt: Umschreiben if-else
 </section>
 
 
 <section data-markdown>
 ### [Schleifen](http://docs.oracle.com/javase/tutorial/java/nutsandbolts/flow.html)
 
-* while
-* for
+* [while](http://docs.oracle.com/javase/tutorial/java/nutsandbolts/while.html)
+* [for](http://docs.oracle.com/javase/tutorial/java/nutsandbolts/for.html)
 </section>
 
 
 <section data-markdown>
-### while
+### [while](http://docs.oracle.com/javase/tutorial/java/nutsandbolts/while.html)
 
     while (condition) {
         //
@@ -212,12 +244,12 @@ and
         //
     } while (condition);
 
-* do-while garantiert ersten Durchlauf
+* Vorteile do-while?
 </section>
 
 
 <section data-markdown>
-### for
+### [for](http://docs.oracle.com/javase/tutorial/java/nutsandbolts/for.html)
 
     for (init; condition; op) {
         //
@@ -228,12 +260,15 @@ and
         System.out.println("i is " + i);
     }
 
-* pre/post increment/decrement
+* Erinnerung: pre/post increment/decrement
+* Vor-/Nachteile gegenüber while?
+
+* Jetzt seid ihr gefragt: Umschreiben while
 </section>
 
 
 <section data-markdown>
-### Branching
+### [Branching](http://docs.oracle.com/javase/tutorial/java/nutsandbolts/branch.html)
 
     for (;;) {
         if (condition) {
@@ -242,8 +277,10 @@ and
             //
         }
     }
+    // <-
 
-    while (true) {
+
+    while (true) { // <-
         if (condition) {
             continue; // continues at the top of the loop
         } else {
@@ -251,9 +288,7 @@ and
         }
     }
 
-* break
-* continue
-* return
+* break, continue, return
 </section>
 
 
@@ -354,6 +389,8 @@ Letzte Woche vergessen, darum heute ausführlicher
 
 * Frühzeitig Lösungen einreichen
 * ATIS Poolraumbetreuung DI/MI, 15.45-17.15
+
+heute: <strong>bunter</strong> und <strong>toller</strong> denn je!
 </section>
 
 {% endblock %}
