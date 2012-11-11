@@ -3,6 +3,9 @@
   <head>
     <meta charset="utf-8">
     <title>Kontrollstrukturen</title>
+    <meta name="author" content="Daniel J. H.">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="../reveal.js/css/reveal.css">
     <link rel="stylesheet" href="../reveal.js/css/theme/simple.css" id="theme">
@@ -430,10 +433,10 @@ heute: <strong>bunter</strong> und <strong>toller</strong> denn je!
         transition: 'linear',
 
         dependencies: [
-        { src: '../reveal.js/lib/js/highlight.js', async: true, callback: function() { window.hljs.initHighlightingOnLoad(); } },
         { src: '../reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-        { src: '../reveal.js/lib/js/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-        { src: '../reveal.js/lib/js/data-markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } }
+        { src: '../reveal.js/plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        { src: '../reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        { src: '../reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { window.hljs.initHighlightingOnLoad(); } }
         ]
       });
     </script>
