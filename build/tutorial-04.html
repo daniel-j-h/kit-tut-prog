@@ -38,19 +38,144 @@
 </section>
 
 
+<section data-markdown>
+### Kurze Umfrage
+
+* Nutzung Links auf den Slides
+* Insb. Oracle Tutorials
+</section>
+
+
 <!-- 2 --!>
 <section data-markdown>
 ### Wiederholung
 
+* Methoden überladen
+* Parameterübergabe
+* Getter / Setter
 * Arrays
 * Range-based loop
 </section>
 
 
 <section data-markdown>
+### [Methoden überladen](http://docs.oracle.com/javase/tutorial/java/javaOO/methods.html)
+
+    private void alertUser(int i) {
+        System.out.println("Amount is " + i);
+    }
+
+    private void alertUser(double d) {
+        System.out.println("Amount is " + d);
+    }
+
+* Vor-/Nachteile?
+</section>
+
+
+<section data-markdown>
+### [Parameterübergabe](http://docs.oracle.com/javase/tutorial/java/javaOO/arguments.html)
+
+    private void timesTwo(int i) {  // Warum so nicht möglich?
+        i = i * 2;
+    }
+
+    int num = 5;
+    timesTwo(num);
+    // Welchen Wert hat num hier?
+
+
+    private void cloneInto(Bike b) {  // Warum so möglich?
+        b.wheels = this.wheels;
+        b.gears = this.gears;
+
+        // Annahme: Direkter Zugriff auf Attribute möglich
+    }
+
+* Primitive Typen
+* Referenz Typen
+</section>
+
+
+<section data-markdown>
+### [Getter / Setter](https://de.wikipedia.org/wiki/Geheimnisprinzip#Datenkapselung_im_objektorientierten_Paradigma)
+
+    public class Bike {
+        private Wheels wheels;
+
+        public Bike(Wheels wheels) {
+            setWheels(wheels);
+        }
+
+        public Wheels getWheels() {  // Getter
+            return wheels;
+        }
+
+        public void setWheels(Wheels wheels) {  // Setter
+            this.wheels = wheels;
+        }
+    }
+
+    b.wheels = otherWheels;  // Möglich?
+
+* Vor-/Nachteile?
+* Eclipse: Generate Getters / Setters
+</section>
+
+
+<section data-markdown>
 ### [Arrays](http://docs.oracle.com/javase/tutorial/java/nutsandbolts/arrays.html)
 
-<blockquote>Each class variable, instance variable, or array component is initialized with a default value when it is created (§15.9, §15.10)</blockquote>
+Eindimensional
+
+    int[] favoriteNumbers = new int[2];
+
+    favoriteNumbers[0] = 5;
+    favoriteNumbers[1] = 9;
+
+
+    int[] worstNumbers = { 4, 8 }; // alt. initialization syntax
+
+
+    int[] moreNumbers = favoriteNumbers;
+    moreNumbers[0]++;
+
+    // Welchen Wert haben favoriteNumbers[0] und moreNumbers[0] ?
+
+* Fixed length
+* Single type
+</section>
+
+
+<section data-markdown>
+### [Arrays](http://docs.oracle.com/javase/tutorial/java/nutsandbolts/arrays.html)
+
+Mehrdimensional
+
+    //   0  1  2
+    //   3  4  5
+
+    int[][] matrix = new int[2][3];
+
+    matrix[0][0] = 0;
+    matrix[0][1] = 1;
+    matrix[0][2] = 2;
+
+    matrix[1][0] = 3;
+    matrix[1][1] = 4;
+    matrix[1][2] = 5;
+
+
+    String[][] people = { {"Alice", "Alison"}, {"Bob", "Bobsen"} };
+
+* Wie kopiert man die Variable matrix?
+</section>
+
+
+<section data-markdown>
+### [Arrays](http://docs.oracle.com/javase/tutorial/java/nutsandbolts/arrays.html)
+
+<blockquote>Each class variable, instance variable, <strong>or array component</strong> is initialized with a default value when it is created (§15.9, §15.10)</blockquote>
 [Java 7 Language Specification](http://docs.oracle.com/javase/specs/jls/se7/html/jls-4.html#jls-4.12.5)
 </section>
 
@@ -59,37 +184,81 @@
 ### [Range-based loop](http://docs.oracle.com/javase/specs/jls/se7/html/jls-14.html#jls-14.14.2)
 
     int[] values = { 5, 2, 7, 8, 2, 5 };
-    int sum;
+    int sum = 0;
 
     for (int v : values)
         sum += v;
+
+* Vor-/Nachteile gegenüber manuellem Iterieren?
 </section>
 
 
 <section data-markdown>
-### Bunte Beispiele: Android
+### Bunte Beispiele: Facebook Android SDK
 
-[src/com/android/contacts/dialpad/DialpadFragment.java:475](https://github.com/android/platform_packages_apps_contacts/blob/master/src/com/android/contacts/dialpad/DialpadFragment.java#L475)
+[facebook/android/SessionEvents.java](https://github.com/facebook/facebook-android-sdk/blob/master/examples/simple/src/com/facebook/android/SessionEvents.java#L76)
 
-    private void setupKeypad(View fragmentView) { // shortened
-        int[] buttonIds = new int[] {
-            R.id.one, /* .. */, R.id.zero, R.id.star, R.id.pound };
+    // mAuthListeners is list of AuthListener
 
-        for (int id : buttonIds) {
-            ((DialpadImageButton) fragmentView.findViewById(id)).
-                    setOnPressedListener(this);
+    public static void onLoginSuccess() {
+        for (AuthListener listener : mAuthListeners) {
+            listener.onAuthSucceed();
         }
-
-        // Long-pressing one button will initiate Voicemail.
-        fragmentView.findViewById(R.id.one).
-                setOnLongClickListener(this);
-
-        // Long-pressing zero button will enter '+' instead.
-        fragmentView.findViewById(R.id.zero).
-               setOnLongClickListener(this);
     }
 
-<small>accessed Nov. 5, 2012</small>
+    public static void onLoginError(String error) {
+        for (AuthListener listener : mAuthListeners) {
+            listener.onAuthFail(error);
+        }
+    }
+
+<small>accessed Nov. 11, 2012</small>
+</section>
+
+
+<section data-markdown>
+### Bunte Beispiele: SoundCloud
+
+[soundcloud/api/Request.java](https://github.com/soundcloud/java-api-wrapper/blob/master/src/main/java/com/soundcloud/api/Request.java#L232)
+
+    /**
+     * Registers a file to be uploaded with a POST or PUT request.
+     * @param name  the name of the parameter
+     * @param file  the file to be submitted
+     * @return this
+     */
+    public Request withFile(String name, File file) {
+        return file != null ? withFile(name, file, file.getName()) : this;
+    }
+
+<small>accessed Nov. 11, 2012</small>
+
+* Ternary operator
+* Überladene withFile Methode
+</section>
+
+
+<section data-markdown>
+### Bunte Beispiele: SoundCloud
+
+[soundcloud/api/Request.java](https://github.com/soundcloud/java-api-wrapper/blob/master/src/main/java/com/soundcloud/api/Request.java#L267)
+
+
+    /**
+     * Registers binary data to be uploaded with a POST or PUT request.
+     * @param name  the name of the parameter
+     * @param data  the data to be submitted
+     * @param fileName the name of the uploaded file
+     * @return this
+     */
+    public Request withFile(String name, byte[] data, String fileName) {
+        return withFile(name, ByteBuffer.wrap(data), fileName);
+    }
+
+<small>accessed Nov. 11, 2012</small>
+
+* Überladene withFile Methode
+* byte array (hier Binärdatei: Song) für Upload
 </section>
 
 
@@ -98,7 +267,12 @@
 ### Übungsblatt B
 
 * Hinweise beachten
-* Array Initialisierung
+* Checkstyle verwenden
+* [Lösungsvorschlag](http://baldur.iti.kit.edu/programmieren/) verwenden
+* Hint: Array Initialisierung
+* Verhalten an den Rändern beachten
+* Kontrast ~ N(contrastMaxPos, 1.7)
+* Fließkommatypen Vergleich: epsilon-Differenz
 </section>
 
 
