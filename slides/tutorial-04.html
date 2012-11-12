@@ -149,7 +149,25 @@ Mehrdimensional
 
     String[][] people = { {"Alice", "Alison"}, {"Bob", "Bobsen"} };
 
-* Wie kopiert man die Variable matrix?
+* Wie kopiert man das Array matrix?
+</section>
+
+
+<section data-markdown>
+### [Arrays](http://docs.oracle.com/javase/tutorial/java/nutsandbolts/arrays.html)
+
+[Gut zu wissen](http://docs.oracle.com/javase/tutorial/java/nutsandbolts/arrays.html)
+
+* [System.arraycopy()](http://docs.oracle.com/javase/7/docs/api/java/lang/System.html)
+
+<blockquote>Copies an array from the specified source array, beginning at the specified position, to the specified position of the destination array.</blockquote>
+
+* Versuch Arrays zu casten
+
+```
+int[] j = {4, 5};
+float[] g = (float[]) j; // "Cannot cast from int[] to float[]"
+```
 </section>
 
 
@@ -171,6 +189,71 @@ Mehrdimensional
         sum += v;
 
 * Vor-/Nachteile gegenüber manuellem Iterieren?
+</section>
+
+
+<section data-markdown>
+### [Arrays](http://docs.oracle.com/javase/tutorial/java/nutsandbolts/arrays.html)
+
+Jetzt seid ihr gefragt
+
+    int[] someNumbers // quite big array of numbers
+
+    public static int min(final int[] numbers) {
+
+    }
+
+    public static int max(final int[] numbers) {
+
+    }
+
+Fragen vorweg:
+
+* Warum sind Methoden static?
+* Argumente final? Was verhindert das / was nicht?
+</section>
+
+
+<section data-markdown>
+### [Arrays](http://docs.oracle.com/javase/tutorial/java/nutsandbolts/arrays.html)
+
+Jetzt seid ihr gefragt
+
+    public static Pair minmax(final int[] numbers) {
+
+    }
+
+    public class Pair {
+        private int first;
+        private int second;
+
+    }
+
+* Alternative zu eigenem Typ Pair?
+* Vor-/Nachteile?
+</section>
+
+
+<section data-markdown>
+### [Arrays](http://docs.oracle.com/javase/tutorial/java/nutsandbolts/arrays.html)
+
+Jetzt seid ihr gefragt
+
+<strong>Denkt denn hier niemand an Effizienz?</strong>
+
+* Warum min() gefolgt von max() nicht optimal?
+* Wie lösen? Was gewinnen wir hier durch?
+</section>
+
+
+<section data-markdown>
+### [Arrays](http://docs.oracle.com/javase/tutorial/java/nutsandbolts/arrays.html)
+
+* Sortieren / Suchen (in etwa 2 Wochen)
+
+* [std::minmax_element](http://en.cppreference.com/w/cpp/algorithm/minmax_element)
+* [std::pair](http://en.cppreference.com/w/cpp/utility/pair)
+* [std::make_pair](http://en.cppreference.com/w/cpp/utility/pair/make_pair)
 </section>
 
 
