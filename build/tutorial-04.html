@@ -178,7 +178,7 @@ Mehrdimensional
 <section data-markdown>
 ### [Arrays](http://docs.oracle.com/javase/tutorial/java/nutsandbolts/arrays.html)
 
-[Gut zu wissen](http://docs.oracle.com/javase/tutorial/java/nutsandbolts/arrays.html)
+Gut zu wissen
 
 * [System.arraycopy()](http://docs.oracle.com/javase/7/docs/api/java/lang/System.html)
 
@@ -187,14 +187,16 @@ Mehrdimensional
 * Versuch Arrays zu casten
 
 ```
-int[] j = {4, 5};
-float[] g = (float[]) j; // "Cannot cast from int[] to float[]"
+int[] myIntegers = {4, 5};
+float[] myFloats = (float[]) myIntegers; // "Cannot cast from int[] to float[]"
 ```
 </section>
 
 
 <section data-markdown>
 ### [Arrays](http://docs.oracle.com/javase/tutorial/java/nutsandbolts/arrays.html)
+
+Gut zu wissen
 
 <blockquote>Each class variable, instance variable, <strong>or array component</strong> is initialized with a default value when it is created (§15.9, §15.10)</blockquote>
 [Java 7 Language Specification](http://docs.oracle.com/javase/specs/jls/se7/html/jls-4.html#jls-4.12.5)
@@ -262,6 +264,11 @@ Jetzt seid ihr gefragt
 Jetzt seid ihr gefragt
 
 <strong>Denkt denn hier niemand an Effizienz?</strong>
+
+    // next try
+    public static Pair minmax(final int[] numbers) {
+
+    }
 
 * Warum min() gefolgt von max() nicht optimal?
 * Wie lösen? Was gewinnen wir hier durch?
@@ -380,7 +387,7 @@ Jetzt seid ihr gefragt
       Reveal.initialize({
         controls: false,
         progress: true,
-        history: true,
+        history: false,
         rollingLinks: false,
 
         theme: 'simple',
