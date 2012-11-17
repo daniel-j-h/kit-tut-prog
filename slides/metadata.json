@@ -14,5 +14,21 @@
   "tutorial-04" : {
     "date" : "Nov. 14 2012",
     "description" : "Arrays"
+  },
+  "tutorial-05" : {
+    "date" : "Nov. 21 2012",
+    "description" : "Datenkapselung, Packages"
+  },
+  "tutorial-06" : {
+    "date" : "Nov. 28 2012",
+    "description" : "Referenzen, Listen, ADTs"
+  },
+  "tutorial-07" : {
+    "date" : "Dec. 5 2012",
+    "description" : "Suchen, Sortieren"
+  },
+  "tutorial-08" : {
+    "date" : "Dec. 12 2012",
+    "description" : "Rekursion"
   }
 }
