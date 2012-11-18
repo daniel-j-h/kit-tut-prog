@@ -30,6 +30,20 @@
 <section data-markdown>
 ### Rekursion
 
+* linear recursion
+* tail-recursion
+</section>
+
+
+<section data-markdown>
+### Rekursion
+
+    public static int max3(int a, int b, int c) {
+      if (a >= b && a >= c)
+        return a;
+     else
+        return max3(b, c, a);
+    }
 </section>
 
 
@@ -39,14 +53,6 @@
 
 * Hinweise beachten
 * Checkstyle verwenden
-</section>
-
-
-<section data-markdown>
-### Erinnerung
-
-* Frühzeitig Lösungen einreichen
-* ATIS Poolraumbetreuung DI/MI, 15.45-17.15
 </section>
 
 {% endblock %}
