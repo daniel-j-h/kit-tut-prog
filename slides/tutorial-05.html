@@ -58,6 +58,58 @@
 * private
 * public
 * protected
+* package-private (no explicit modifier)
+
+</section>
+
+
+<section data-markdown>
+### [Datenkapselung](https://de.wikipedia.org/wiki/Geheimnisprinzip#Datenkapselung_im_objektorientierten_Paradigma)
+
+[access control](http://docs.oracle.com/javase/tutorial/java/javaOO/accesscontrol.html)
+
+  <table>
+    <thead>
+      <tr>
+        <th>modifier</th>
+        <th>class</th>
+        <th>package</th>
+        <th>(subclass)</th>
+        <th>world</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>public</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>Y</td>
+      </tr>
+      <tr>
+        <td>protected</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+      </tr>
+      <tr>
+        <td>no modifier</td>
+        <td>Y</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>N</td>
+      </tr>
+      <tr>
+        <td>private</td>
+        <td>Y</td>
+        <td>N</td>
+        <td>N</td>
+        <td>N</td>
+      </tr>
+    </tbody>
+  </table>
+
 </section>
 
 
