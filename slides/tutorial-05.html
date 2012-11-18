@@ -31,13 +31,29 @@
 
 
 <section data-markdown>
-### Javadoc
+### [Javadoc](http://en.wikipedia.org/wiki/Javadoc)
 
+
+    /**
+     * Short one line description.
+     *
+     * Longer description.
+     * If there were any, it would be here.
+     *
+     * @param variable Description.
+     * @return Description.
+     */
+    public boolean hasTheLHCdestroyedTheWorldYet() {
+        return false;
+    }
+
+* @author, @version könnt ihr gerne weglassen
+* @see, @link, @deprecated, ...
 </section>
 
 
 <section data-markdown>
-### Datenkapselung
+### [Datenkapselung](https://de.wikipedia.org/wiki/Geheimnisprinzip#Datenkapselung_im_objektorientierten_Paradigma)
 
 * private
 * public
@@ -46,8 +62,40 @@
 
 
 <section data-markdown>
-### Packages
+### [Packages erstellen](http://docs.oracle.com/javase/tutorial/java/package/index.html)
 
+    package utils;
+
+    public class DynamicArray {
+
+    }
+
+* Convention: lower-case
+* Vorteile packages?
+</section>
+
+
+<section data-markdown>
+### [Packages einbinden](http://docs.oracle.com/javase/tutorial/java/package/usepkgs.html)
+
+    // 1
+    utils.DynamicArray arr = new utils.DynamicArray();
+
+
+    // 2
+    import utils.DynamicArray;
+
+    DynamicArray arr = new DynamicArray();
+
+
+    // 3
+    import utils.*;
+
+    DynamicArray arr = new DynamicArray();
+
+* [1] Refer to the member by its fully qualified name
+* [2] Import the package member
+* [3] Import the member's entire package
 </section>
 
 
@@ -76,8 +124,50 @@ Jetzt seid ihr gefragt
 
 
 <section data-markdown>
-### String API
+### [String API](http://docs.oracle.com/javase/tutorial/java/data/strings.html)
 
+    public char charAt(int index)
+    public boolean startsWith(String prefix)
+    public boolean endsWith(String suffix)
+    public String toLowerCase()
+    public String toUpperCase()
+    public String trim()
+    public boolean equals(Object anObject)
+    public String replace(char oldChar, char newChar)
+    public String substring(int beginIndex)
+
+* [String](http://docs.oracle.com/javase/7/docs/api/java/lang/String.html) [<strong>immutable</strong>](http://stackoverflow.com/a/5234160)
+* [StringBuilder](http://docs.oracle.com/javase/7/docs/api/java/lang/StringBuilder.html) 
+
+* [Manipulating Characters in a String](http://docs.oracle.com/javase/tutorial/java/data/manipstrings.html)
+</section>
+
+
+<section data-markdown>
+### Bunte Beispiele: Stringbuilder ASP.NET
+
+    StringBuilder builder = new StringBuilder();
+
+    foreach (string attr in jsonRet["Attribute"])
+        if (attr != null && attr != "")
+            builder.AppendFormat("{0}, ", attr);
+
+    // do not forget to remove the last spare occurence of ", "
+    addTableRow(jsonRet["Name"], jsonRet["Age"],
+                builder.ToString().TrimEnd(new char[] { ',', ' ' })
+    );
+</section>
+
+
+<section data-markdown>
+### Bunte Beispiele: [Android Packages](http://developer.android.com/reference/packages.html)
+
+* [android.bluetooth](http://developer.android.com/reference/android/bluetooth/package-summary.html)
+* [android.location](http://developer.android.com/reference/android/location/package-summary.html)
+* [android.net.wifi](http://developer.android.com/reference/android/net/wifi/package-summary.html)
+* [android.telephony](http://developer.android.com/reference/android/telephony/package-summary.html)
+
+<small>accessed Nov. 11, 2012</small>
 </section>
 
 
