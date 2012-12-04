@@ -13,30 +13,178 @@
 <section data-markdown>
 ### Agenda
 
+
+* Nachbesprechung Übungsblatt
 * Wiederholung Vorlesung
 * Bunte Beispiele
-* Übungsblatt Teilaufgabe A
+* Übungsblatt
 </section>
 
 
 <!-- 2 --!>
 <section data-markdown>
+### Nachbesprechung Übungsblatt
+
+* csv-Aufgabe
+* f-d-Aufgabe
+</section>
+
+
+<section data-markdown>
+### Nachbesprechung Übungsblatt
+
+csv-Aufgabe
+
+* Vorgegebene Dateien verwenden
+* Erklären != Werte hinschreiben
+* #NAME?
+* Lokal testen
+</section>
+
+
+<section data-markdown>
+### Nachbesprechung Übungsblatt
+
+f-d-Aufgabe
+
+* do-while beachten
+* boolean checks, oft eleganter break
+* Lokal testen
+</section>
+
+
+<section data-markdown>
 ### Wiederholung
 
-* Suchen
-* Sortieren
+* Listen
+* Vererbung
 </section>
 
 
 <section data-markdown>
-### Suchen
+### Listen
 
+* Einfach verkettet
+* Doppelt verkettet
 </section>
 
 
 <section data-markdown>
-### Sortieren
+### Einschub
 
+Fragen zum bisherigen Stoff
+</section>
+
+
+<section data-markdown>
+### Einführendes Beispiel
+
+Routing auf OSM Daten (Tafelbild)
+
+* Server
+* Datenbank
+* Client
+</section>
+
+
+<section data-markdown>
+### [Vererbung](http://docs.oracle.com/javase/tutorial/java/IandI/subclasses.html)
+
+    public Child extends Parent {
+
+    }
+
+* models "is-a"
+* superclass (base, parent)
+* subclass (derived, child)
+* access control (subclass): public, protected
+* Keine multiple inheritance (C++)
+
+* Vor-/Nachteile?
+</section>
+
+
+<section data-markdown>
+### [Vererbung](http://docs.oracle.com/javase/tutorial/java/IandI/subclasses.html)
+
+Zugriff auf Superklasse
+
+    public class Child extends Parent {
+        public Child() {
+            super();
+
+
+        }
+
+        @Override
+        public method() {
+
+        }
+    }
+
+* [super()](http://docs.oracle.com/javase/tutorial/java/IandI/super.html)
+* Keine Vererbung von Konstruktoren
+* ähnlich zu this
+</section>
+
+
+<section data-markdown>
+### Jetzt seid ihr gefragt
+
+* FlyingObject: Höhe, Geschwindigkeit
+* Quadrocopter: Zusätzlich Motoren, Batterie, ..
+</section>
+
+
+<section data-markdown>
+### Jetzt seid ihr gefragt
+
+    class FlyingObject{ }
+    class Quadrocopter extends FlyingObject{ }
+
+    FlyingObject f = new FlyingObject()
+    Quadrocopter q = new Quadrocopter();
+
+    FlyingObject g = new Quadrocopter();
+    Quadrocopter r = new FlyingObject();
+
+    f.method();
+    q.method()
+    g.method();
+    r.method();
+
+* Welche Zuweisungen sind gültig?
+* Methoden welcher Klasse werden aufgerufen?
+</section>
+
+
+<section data-markdown>
+### [Polymorphie](http://docs.oracle.com/javase/tutorial/java/IandI/polymorphism.html)
+
+Dynamisches Binden
+
+    class Constraint{ }
+    class StaticConstraint extends Constraint{ }
+    class DynamicConstraint extends Constraint{ }
+
+    Constraint[] cst = new Constraint[n];
+    c[0] = new StaticConstraint();
+    c[1] = new DynamicConstraint();
+
+    for(Constraint c : cst)
+        c.evaluate();
+
+* runtime overhead
+* Vor-/Nachteile?
+</section>
+
+
+<section data-markdown>
+### Bunte Beispiele: [Skype](http://joxeankoret.com/blog/2012/11/04/a-simple-pin-tool-unpacker-for-the-linux-version-of-skype/)
+
+* Qt als GUI toolkit
+* Pfeile modellieren is-a inheritance
+* Ausblick: [UML's class diagram](http://en.wikipedia.org/wiki/Class_diagram)
 </section>
 
 
@@ -46,6 +194,10 @@
 
 * Hinweise beachten
 * Checkstyle verwenden
+* Praktomat checks
+* nur java.lang nutzen
+* Doppelt verkettete Liste
+* Unit tests
 </section>
 
 {% endblock %}

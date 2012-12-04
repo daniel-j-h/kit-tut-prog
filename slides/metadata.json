@@ -25,14 +25,6 @@
   },
   "tutorial-07" : {
     "date" : "Dec. 5 2012",
-    "description" : "Suchen, Sortieren"
-  },
-  "tutorial-08" : {
-    "date" : "Dec. 12 2012",
-    "description" : "Rekursion"
-  },
-  "tutorial-09" : {
-    "date" : "Dec. 19 2012",
     "description" : "Vererbung"
   }
 }
