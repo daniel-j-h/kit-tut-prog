@@ -164,14 +164,14 @@ Zugriff auf Superklasse
     class FlyingObject{ }
     class Quadrocopter extends FlyingObject{ }
 
-    FlyingObject f = new FlyingObject()
+    FlyingObject f = new FlyingObject();
     Quadrocopter q = new Quadrocopter();
 
     FlyingObject g = new Quadrocopter();
     Quadrocopter r = new FlyingObject();
 
     f.method();
-    q.method()
+    q.method();
     g.method();
     r.method();
 

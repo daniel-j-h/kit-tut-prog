@@ -26,5 +26,9 @@
   "tutorial-07" : {
     "date" : "Dec. 5 2012",
     "description" : "Vererbung"
+  },
+  "tutorial-08" : {
+    "date" : "Dec. 12 2012",
+    "description" : "Interfaces, Generics"
   }
 }

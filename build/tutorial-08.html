@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Interfaces, Generics</title>
+    <meta name="author" content="Daniel J. H.">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../reveal.js/css/reveal.css">
+    <link rel="stylesheet" href="../reveal.js/css/theme/simple.css" id="theme">
+    <link rel="stylesheet" href="../css/github.css">
+    <!--[if lt IE 9]>
+    <script src="../reveal.js/lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+<section>
+<h1>Interfaces, Generics</h1>
+<h3>Dec. 12 2012</h3>
+</section>
+
+
+<!-- 1 --!>
+<section data-markdown>
+### Organisatorisches
+
+* Übungsblatt bis 17.12.
+* ATIS Poolraumbetreuung DI/MI, 15.45-17.15
+</section>
+
+
+<section data-markdown>
+### Agenda
+
+* Wiederholung Vorlesung
+* Bunte Beispiele
+* Übungsblatt
+</section>
+
+
+<!-- 2 --!>
+<section data-markdown>
+### Wiederholung
+
+* Vererbung
+* Interfaces
+* Generics
+</section>
+
+
+<section data-markdown>
+### [Vererbung](http://docs.oracle.com/javase/tutorial/java/IandI/subclasses.html)
+
+* TODO composition vs. inheritance, final
+</section>
+
+
+<section data-markdown>
+### Interfaces
+
+* TODO contract, implement interface(s)
+</section>
+
+
+<section data-markdown>
+### Generics
+
+* TODO java7 diamond
+</section>
+
+
+<section data-markdown>
+### Jetzt seid ihr gefragt
+
+* stack interface
+* listimpl. and arrayimpl.
+* generic data
+</section>
+
+
+<section data-markdown>
+### Bunte Beispiele: []()
+
+</section>
+
+
+<!-- 3 --!>
+<section data-markdown>
+### Übungsblatt
+
+* Hinweise beachten
+* Checkstyle verwenden
+* Praktomat checks
+* nur java.lang nutzen
+* Doppelt verkettete Liste
+* Unit tests
+</section>
+
+
+      </div>
+    </div>
+
+    <script src="../reveal.js/lib/js/head.min.js"></script>
+    <script src="../reveal.js/js/reveal.min.js"></script>
+
+    <script>
+      Reveal.initialize({
+        controls: false,
+        progress: true,
+        history: false,
+        rollingLinks: false,
+
+        theme: 'simple',
+        transition: 'linear',
+
+        dependencies: [
+        { src: '../reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+        { src: '../reveal.js/plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        { src: '../reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        { src: '../reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { window.hljs.initHighlightingOnLoad(); } }
+        ]
+      });
+    </script>
+  </body>
+</html>
