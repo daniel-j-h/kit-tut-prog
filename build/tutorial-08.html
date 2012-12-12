@@ -35,9 +35,25 @@
 <section data-markdown>
 ### Agenda
 
+* Nachbesprechung Übungsblatt
 * Wiederholung Vorlesung
 * Bunte Beispiele
 * Übungsblatt
+</section>
+
+
+<section data-markdown>
+### Nachbesprechung Übungsblatt
+
+Geometry
+
+* comparing doubles
+* control1, control2 vs. lhs, rhs
+* delegating constructor
+* "mirror point line" [1](http://stackoverflow.com/a/8954454), [2](http://stackoverflow.com/a/11599678)
+* references: dynamic web
+* "getPointAt" != Javadoc
+* Javadoc vs. impl. comments
 </section>
 
 
@@ -54,36 +70,231 @@
 <section data-markdown>
 ### [Vererbung](http://docs.oracle.com/javase/tutorial/java/IandI/subclasses.html)
 
-* TODO composition vs. inheritance, final
+[composition vs. inheritance (more info)](http://stackoverflow.com/a/891820)
+
+    public final FlyingObject { }
+    public class Quadrocopter extends FlyingObject { }
+    // ^ possible?
+
+
+    // inheritance models "is-a"
+    public class Quadrocopter extends FlyingObject { }
+
+    // composition models "has-a"
+    public class Quadrocopter {
+        private FlyingObject fo;
+
+        public Quadrocopter(FlyingObject fo) {
+            this.fo = fo;
+        }
+    }
 </section>
 
 
 <section data-markdown>
-### Interfaces
+### [Interfaces](http://docs.oracle.com/javase/tutorial/java/IandI/createinterface.html)
 
-* TODO contract, implement interface(s)
+    public interface FlyableInterface {
+        void start();
+        void stop();
+    }
+
+    public class Quadrocopter implements FlyableInterface {
+        // assume attributes
+
+        void start() {
+            this.engine.activate();
+        }
+
+        void stop() {
+            this.engine.shutdown();
+        }
+    }
+
+* contract
+* implement interface(s)
 </section>
 
 
 <section data-markdown>
-### Generics
+### [Interfaces](http://docs.oracle.com/javase/tutorial/java/IandI/createinterface.html)
 
-* TODO java7 diamond
+Interfaces as types
+
+    public Plane implements FlyableInterface {}
+    public Drone implements FlyableInterface {}
+
+    FlyableInterface fo = getFlyableFromHangar();
+
+    fo.start();
+    fo.stop();
+</section>
+
+
+<section data-markdown>
+### [Generics](http://docs.oracle.com/javase/tutorial/java/generics/why.html)
+
+    public class Stack {
+        void push(int item) {
+
+        }
+
+        int pop() {
+
+        }
+    }
+
+* Stack nur mit ints nutzbar
+* Wie andere Typen verwenden?
+</section>
+
+
+<section data-markdown>
+### [Generics](http://docs.oracle.com/javase/tutorial/java/generics/why.html)
+
+    public class Stack<T> {
+        void push(T item) {
+
+        }
+
+        T pop() {
+
+        }
+    }
 </section>
 
 
 <section data-markdown>
 ### Jetzt seid ihr gefragt
 
-* stack interface
-* listimpl. and arrayimpl.
-* generic data
+    // two groups, two implementations, based on
+    import java.util.LinkedList;
+    import java.util.ArrayList;
+
+    push(), pop()
+
+* interfaces
+* generics
 </section>
 
 
 <section data-markdown>
-### Bunte Beispiele: []()
+### Jetzt seid ihr gefragt: Stack
 
+    public interface Stack<T> {
+        void push(T item);
+        T pop();
+    }
+</section>
+
+
+<section data-markdown>
+### Jetzt seid ihr gefragt: Stack
+
+    public class ListStack<T> implements Stack<T> {
+        LinkedList<T> storage;
+
+        public ListStack() {
+          this.storage = new LinkedList<T>();
+        }
+
+        @Override
+        public void push(T item) {
+          storage.add(item);
+        }
+
+        @Override
+        public T pop() {
+          return storage.removeLast();
+        }
+    }
+</section>
+
+
+<section data-markdown>
+### Jetzt seid ihr gefragt: Stack
+
+    public class ArrayStack<T> implements Stack<T> {
+        ArrayList<T> storage;
+
+        public ArrayStack() {
+          this.storage = new ArrayList<T>();
+        }
+
+        @Override
+        public void push(T item) {
+          storage.add(item);
+        }
+
+        @Override
+        public T pop() {
+          return storage.remove(storage.size() - 1);
+        }
+    }
+</section>
+
+
+<section data-markdown>
+### Jetzt seid ihr gefragt: Stack
+
+    public class Main {
+        public static void main(String[] args) {
+            Stack<Integer> s;
+
+            s = new ListStack<>();
+            // s = new ArrayStack<>();
+
+            s.push(2);
+            s.push(7);
+            s.push(9);
+
+            System.out.println(s.pop());
+            System.out.println(s.pop());
+            System.out.println(s.pop());
+        }
+    }
+</section>
+
+
+<section data-markdown>
+### Bunte Beispiele: [Bada](https://en.wikipedia.org/wiki/Bada)
+
+[List interface](http://docs.oracle.com/javase/7/docs/api/java/util/List.html)
+
+    import java.util.ArrayList;
+    import java.util.LinkedList;
+    import java.util.List;
+
+    public class ListExample {
+        public static void main(String[] args) {
+            List<String> l = new LinkedList<>();
+            // List<String> l = new ArrayList<>(10);
+
+            l.add("<b>Hey!</b>");
+            l.add("how are you?");
+        }
+    }
+
+* Java 7 rhs diamond
+</section>
+
+
+<section data-markdown>
+### Bunte Beispiele: [Bada](https://en.wikipedia.org/wiki/Bada)
+
+[ILocationListener interface](http://developer.bada.com/help/index.jsp?topic=/com.osp.cppapireference.help/classOsp_1_1Locations_1_1ILocationListener.html)
+
+    class WifiLocation : public Osp::Locations::ILocationListener {
+      protected:
+        // provide updates of the current location
+        void OnLocationUpdated(Location &location);
+
+        // notify if the state has changed
+        void OnProviderStateChanged(LocProviderState newState);
+    }
+
+* Heavy usage of interfaces
+* Online docs auto-generated
 </section>
 
 
