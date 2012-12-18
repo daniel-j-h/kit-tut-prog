@@ -6,7 +6,7 @@
 ### Agenda
 
 * Nachbesprechung Übungsblatt
-* Wiederholung Vorlesung
+* Kuchen und Glühwein
 </section>
 
 
@@ -25,10 +25,67 @@
 
 <!-- 2 --!>
 <section data-markdown>
-### Wiederholung
-
-* TODO
+### Kuchen und Glühwein
 </section>
+
+
+<section data-markdown>
+### [Spark](http://www.sparkjava.com)
+
+Micro web framework for Java
+
+Packages and Javadoc, [readme](http://www.sparkjava.com/readme.html), [wiki](http://code.google.com/p/spark-java/)
+
+* [spark-0.9.9.4-SNAPSHOT.zip](http://spark-java.googlecode.com/files/spark-0.9.9.4-SNAPSHOT.zip)
+* [spark-dependencies_0.9.9.3_and_newer.zip](http://spark-java.googlecode.com/files/spark-dependencies_0.9.9.3_and_newer.zip)
+</section>
+
+
+<section data-markdown>
+### [Spark](http://www.sparkjava.com)
+
+Basic example
+
+    import static spark.Spark.*;
+    import spark.*;
+
+    public class Glibber {
+      public static void main(String[] args) {
+        setPort(8080);
+
+        get(new Route("/") {
+          @Override
+          public Object handle(Request request, Response response) {
+            return "I am the root handler";
+          }
+        });
+      }
+    }
+</section>
+
+
+<section data-markdown>
+### [Spark](http://www.sparkjava.com)
+
+Handling user input
+
+    import static spark.Spark.*;
+    import spark.*;
+
+    public class Glibber {
+      public static void main(String[] args) {
+        setPort(8080);
+
+        post(new Route("/post") {
+          @Override
+          public Object handle(Request request, Response response) {
+            return "You sent: " + request.body();
+          }
+        });
+      }
+    }
+</section>
+
 
 <!-- 3 --!>
 <section data-markdown>
