@@ -34,5 +34,9 @@
   "tutorial-09" : {
     "date" : "Dec. 19 2012",
     "description" : "Cookies!"
+  },
+  "tutorial-10" : {
+    "date" : "Jan. 9 2013",
+    "description" : "Rekursion, Suchen, Sortieren"
   }
 }
