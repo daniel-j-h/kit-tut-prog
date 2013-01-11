@@ -38,5 +38,9 @@
   "tutorial-10" : {
     "date" : "Jan. 9 2013",
     "description" : "Rekursion, Suchen, Sortieren"
+  },
+  "tutorial-11" : {
+    "date" : "Jan. 16 2013",
+    "description" : "Exceptions"
   }
 }
