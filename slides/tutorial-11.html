@@ -9,8 +9,8 @@ Abschlussaufgaben
 
 * Anmeldebeginn: 28.1.
 * Anmeldeschluss: 28.2.
-* Abmeldeschluss: 28.2.
-* Ausgabetermin Teil 1: 28.1.
+* Abmeldeschluss: <strong>28.2.</strong>
+* Ausgabetermin Teil 1: <strong>28.1.</strong>
 * Ausgabetermin Teil 2: 11.2.
 * Abgabefrist Teil 1: 11.3.
 * Abgabefrist Teil 2: 25.3.
@@ -20,15 +20,147 @@ Abschlussaufgaben
 <section data-markdown>
 ### Agenda
 
+* Nachbesprechung Übungsblatt
 * Wiederholung Vorlesung
+* Bunte Beispiele
 </section>
 
 
 <!-- 2 --!>
 <section data-markdown>
+### Nachbesprechung Übungsblatt
+
+Statistics
+
+* 14 Solutions
+</section>
+
+
+<section data-markdown>
+### Nachbesprechung Übungsblatt
+
+    if (this.isEmpty() == false) { }
+
+    if (content.length() == 0) {
+        return true;
+    } else {
+        return false;
+    }
+</section>
+
+
+<section data-markdown>
 ### Wiederholung
 
-TODO
+* Exceptions
+* Assertions
+</section>
+
+
+<section data-markdown>
+### [Exceptions](http://docs.oracle.com/javase/tutorial/essential/exceptions/index.html)
+
+* throw
+* catch
+</section>
+
+
+<section data-markdown>
+### [Exceptions](http://docs.oracle.com/javase/tutorial/essential/exceptions/index.html)
+
+    try {
+        // read file
+    } catch(IOException e) {
+        // oops, something went wrong
+    } finally {
+        // cleanup
+
+        // try-with-recources makes this obsolete, but:
+        // object has to implement java.lang.AutoCloseable
+    }
+
+* [try-with-recources](http://docs.oracle.com/javase/tutorial/essential/exceptions/tryResourceClose.html)
+</section>
+
+
+<section data-markdown>
+### [Exceptions](http://docs.oracle.com/javase/tutorial/essential/exceptions/index.html)
+
+    public void readMyAwesomeFile() throws IOException {
+        //
+    }
+</section>
+
+
+<section data-markdown>
+### [Exceptions](http://docs.oracle.com/javase/tutorial/essential/exceptions/index.html)
+
+Hierarchy
+
+* Error
+* Exception
+</section>
+
+
+<section data-markdown>
+### [Exceptions](http://docs.oracle.com/javase/tutorial/essential/exceptions/index.html)
+
+Throw all the things!
+
+    public String getValue(String key) {
+        if (key.length() > 10)
+            throw new IllegalArgumentException(
+                "Key length is restricted by database; max 10");
+
+        //
+    }
+</section>
+
+
+<section data-markdown>
+### Assertions
+
+Disabled by default, use cmd line switch: -ea
+
+* Precondition
+* Postcondition
+* Invariant
+</section>
+
+
+<section data-markdown>
+### Bunte Beispiele: [TM602X](https://github.com/daniel-j-h/TM602X/)
+
+date from_string() usage:
+
+    try {
+      date specific{from_string(params[2])};
+
+      start = specific;
+      end = specific;
+    } catch(const exception& e) {
+      cerr << "Not a date" << endl;
+      exit(EXIT_FAILURE);
+    }
+
+[source](https://github.com/daniel-j-h/TM602X/blob/73f380b5d92b596e578b8db45d3b024a95b24859/main.cpp#L60-68)
+</section>
+
+
+<section data-markdown>
+### Bunte Beispiele: [Error handling in Google Go](http://golang.org/doc/articles/error_handling.html)
+
+    // basic
+    f, err := os.Open("filename.ext")
+
+    if err != nil {
+        log.Fatal(err)
+    }
+
+    // or "inlined"
+    if err := datastore.Get(c, key, record); err != nil {
+        return &appError{err, "Record not found", 404}
+    }
 </section>
 
 
