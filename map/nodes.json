@@ -316,6 +316,31 @@
       ]
     },
     {
+      "name":"Error handling",
+      "children":[
+        {
+          "name":"Exceptions",
+          "children":[
+            {
+              "name":"throw"
+            },
+            {
+              "name":"try"
+            },
+            {
+              "name":"catch"
+            },
+            {
+              "name":"finally"
+            }
+          ]
+        },
+        {
+          "name":"Assertions"
+        }
+      ]
+    },
+    {
       "name":"Javadoc",
       "children":[
         {
