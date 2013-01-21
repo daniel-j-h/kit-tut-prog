@@ -42,5 +42,9 @@
   "tutorial-11" : {
     "date" : "Jan. 16 2013",
     "description" : "Exceptions, Assertions"
+  },
+  "tutorial-12" : {
+    "date" : "Jan. 23 2013",
+    "description" : "Last tutorial: Q&A"
   }
 }
